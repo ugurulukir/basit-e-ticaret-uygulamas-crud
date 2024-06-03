@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using basit_e_ticaret_uygulaması_crud.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace basit_e_ticaret_uygulaması_crud.Services
 {
@@ -8,5 +9,7 @@ namespace basit_e_ticaret_uygulaması_crud.Services
         public ApplicationDbContext(DbContextOptions options):base(options) { 
         
         }
+
+        public DbSet<Product> Products {  get; set; } 
     }
 }
