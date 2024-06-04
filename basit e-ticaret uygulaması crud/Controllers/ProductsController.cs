@@ -1,4 +1,5 @@
-﻿using basit_e_ticaret_uygulaması_crud.Services;
+﻿using basit_e_ticaret_uygulaması_crud.Models;
+using basit_e_ticaret_uygulaması_crud.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace basit_e_ticaret_uygulaması_crud.Controllers
@@ -19,6 +20,17 @@ namespace basit_e_ticaret_uygulaması_crud.Controllers
         public IActionResult Create()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult Create(ProductDto productDto)
+        {
+            if (productDto.ImageFile == null) {
+                ModelState.AddModelError("ImageFile", "Ürün görseli gereklidir!");
+            }
+            if (!ModelState.IsValid) {
+            return View(productDto);
+            }
+            return RedirectToAction("Index", "Products");
         }
     }
 }

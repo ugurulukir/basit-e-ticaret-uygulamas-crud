@@ -15,7 +15,6 @@ namespace basit_e_ticaret_uygulaması_crud.Models
         public decimal Price { get; set; }
         [Required]
         public string Description { get; set; } = "";
-        [MaxLength(100)]
         public IFormFile? ImageFile { get; set; }
     }
 }
