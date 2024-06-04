@@ -10,6 +10,6 @@ namespace basit_e_ticaret_uygulaması_crud.Services
         
         }
 
-        public DbSet<Product> Products {  get; set; } 
+        public DbSet<Product> Products { get; set; }
     }
 }
