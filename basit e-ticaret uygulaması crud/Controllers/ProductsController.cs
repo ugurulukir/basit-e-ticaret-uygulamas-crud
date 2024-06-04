@@ -12,7 +12,7 @@ namespace basit_e_ticaret_uygulaması_crud.Controllers
         }
         public IActionResult Index()
         {
-            var products = context.Products.ToList();
+            var products = context.Products.OrderByDescending(p => p.Id).ToList();
             return View(products);
         }
     }
